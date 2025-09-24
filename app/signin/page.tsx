@@ -16,14 +16,15 @@ export default function SignInPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    window.location.href = "/dashboard"
+    // Handle sign in logic here
+    console.log("Sign in attempt:", { email, password })
   }
 
   return (
     <div className="min-h-screen bg-[url('/bg.jpg')] bg-cover bg-center flex items-center justify-center p-4">
       <div className="w-full max-w-md rounded-xl p-4 bg-[#FFFFFF]/30 shadow-lg" >
         {/* Logo and Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           <div className="flex items-center justify-center mb-6">
             <img 
               src="/logo.png"
@@ -97,12 +98,15 @@ export default function SignInPage() {
               </Link>
             </div>
 
-            <Button
-              type="submit"
-              className="w-full bg-[#be185d] hover:bg-[#831843] text-white py-3 rounded-lg font-medium transition-colors"
-            >
-              Sign In
-            </Button>
+            <Link href= "/dashboard"> 
+              <Button
+                type="submit"
+                className="w-full bg-[#be185d] hover:bg-[#831843] text-white py-3 rounded-lg font-medium transition-colors"
+              >
+                Sign In
+              </Button>
+            </Link>
+            
           </form>
 
           <div className="mt-6 text-center">
